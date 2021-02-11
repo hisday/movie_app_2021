@@ -2,24 +2,16 @@ import React from "react"
 import axios from "axios"
 
 class App extends React.Component {
+
 	state = {
 		isLoading: true,
 		movies: []
 	}
 
-	getMovies = () => {
-		const context = this
-		axios.get("https://yts.mx/api/v2/list_movies.json")
-			.then(function (response) {
-				const { data: {data: {movies}}} = response
-				console.log(movies);
-				context.setState({ movies, isLoading: false })
-			})
-			.catch(function (error) {
-				console.log(error);
-			})
-			.then(function () {
-			});
+	getMovies = async () => {
+		const { data: { data: { movies } } } = await axios.get("https://yts.mx/api/v2/list_movies.json")
+		console.log(movies);
+		this.setState({ movies, isLoading: false })
 	}
 
 	componentDidMount() {
