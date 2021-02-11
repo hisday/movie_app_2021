@@ -31,7 +31,8 @@ class App extends React.Component {
 		return (
 			<section className="container">
 				{isLoading
-					? <div className="loader">
+					? 
+					<div className="loader">
 						<span className="loader__text">Loading...</span>
 					</div>
 					:
@@ -45,7 +46,8 @@ class App extends React.Component {
 										year={movie.year}
 										summary={movie.summary}
 										id={movie.id}
-										poster={movie.medium_cover_image} />
+										poster={movie.medium_cover_image}
+										genres={movie.genres} />
 								)
 							}
 						)}
