@@ -1,5 +1,7 @@
+import "./About.css"
+
 function About() {
-    return <h1>Movie summaries</h1>;
+    return <span className="about">About: This is movie info from ytx</span>;
 }
 
 export default About;
